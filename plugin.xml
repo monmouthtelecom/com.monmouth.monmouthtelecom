@@ -8,14 +8,6 @@
         <clobbers target="cordova.plugins.com.monmouth.monmouthtelecom" />
     </js-module>
 
-    <!-- ios -->
-  <platform name="ios">
-    <config-file target="config.xml" parent="/*">
-      <feature name="SIP">
-        <param name="ios-package" value="SIP" />
-      </feature>
-    </config-file>
-
   </platform>
    <!-- android -->
   <platform name="android">
