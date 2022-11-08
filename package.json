@@ -1,0 +1,21 @@
+{
+  "name": "com.monmouth.monmouthtelecom",
+  "version": "0.0.1",
+  "description": "Monmouth Telecom",
+  "cordova": {
+    "id": "com.monmouth.monmouthtelecom",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "cordova",
+    "android",
+    "monmouthtelecom",
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "author": "Monmouth Telecom",
+  "license": "Apache 2.0"
+}

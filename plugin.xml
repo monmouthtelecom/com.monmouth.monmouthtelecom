@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com.monmouth.monmouthtelecom" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+  <license>Apache 2.0</license>
+  <keywords>cordova, android, ios, monmouthtelecom</keywords>
+  
+   <name>com.monmouth.monmouthtelecom</name>
+    <js-module name="com.monmouth.monmouthtelecom" src="www/com.monmouth.monmouthtelecom.js">
+        <clobbers target="cordova.plugins.com.monmouth.monmouthtelecom" />
+    </js-module>
+
+  </platform>
+   <!-- android -->
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="monmouthtelecom">
+        <param name="android-package" value="com.monmouth.monmouthtelecom" />
+      </feature>
+    </config-file>
+     <config-file target="AndroidManifest.xml" parent="/*">
+        <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+        <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    </config-file>
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">   
+         <service android:exported="false" android:foregroundServiceType="phoneCall" android:name="com.monmouth.SIP.SipService" android:stopWithTask="false" />
+         <receiver android:enabled="true" android:exported="false" android:name="com.monmouth.monmouthtelecom.ServiceStarter">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+    </config-file>
+        <source-file src="src/ServiceStarter.java" target-dir="app/src/main/java/com/monmouth/monmouthtelecom/" />
+        <source-file src="src/MTTMsgExecuter.java" target-dir="app/src/main/java/com/monmouth/monmouthtelecom/" />
+        <source-file src="src/MTTNotificationManager.java" target-dir="app/src/main/java/com/monmouth/monmouthtelecom/" />
+        <source-file src="src/MainApplication.java" target-dir="app/src/main/java/com/monmouth/monmouthtelecom/" />
+        <source-file src="src/MobileCarrier.java" target-dir="app/src/main/java/com/monmouth/monmouthtelecom/" />
+        <source-file src="src/MonmouthTelecom.java" target-dir="app/src/main/java/com/monmouth/monmouthtelecom/" />
+        <source-file src="src/OutgoingCallHandler.java" target-dir="app/src/main/java/com/monmouth/monmouthtelecom/" />
+        <source-file src="src/RaygunHandler.java" target-dir="app/src/main/java/com/monmouth/monmouthtelecom/" />
+    </platform>
+</plugin>
