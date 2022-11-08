@@ -8,7 +8,6 @@
         <clobbers target="cordova.plugins.com.monmouth.monmouthtelecom" />
     </js-module>
 
-  </platform>
    <!-- android -->
   <platform name="android">
     <config-file target="res/xml/config.xml" parent="/*">
