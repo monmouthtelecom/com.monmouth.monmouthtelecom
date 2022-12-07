@@ -115,7 +115,8 @@ public class MonmouthTelecom extends CordovaActivity implements SensorEventListe
       Log.i(LOG_TAG, "MonmouthTelecom setting launchApp for MTT calls flags");
       this.getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
       if (!isProximityMonitoring()) {
-        startProximityMonitoring();
+        //We dont need this anymore Android phone app will activate
+        //startProximityMonitoring();
         if (mTeleListener == null)
           mTeleListener = new PhoneStateListener();
         telephonyMgr.listen(mTeleListener, PhoneStateListener.LISTEN_CALL_STATE);
